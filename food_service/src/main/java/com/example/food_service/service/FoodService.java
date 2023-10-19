@@ -21,6 +21,6 @@ public class FoodService {
     }
 
     public List<Food> getMenu(String cafeId) {
-        return foodRepository.findByName(cafeId);
+        return foodRepository.findBycId(cafeId);
     }
 }
