@@ -16,24 +16,24 @@ public class Food {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "Id")
-    private int f_id;
+    @Column(name = "id")
+    private String f_id;
 
-    @Column(name="Cafe Id")
-    private int c_id;
+    @Column(name="cafe_id")
+    private String c_id;
 
-    @Column(name="Name")
+    @Column(name="name")
     private String name;
 
-    @Column(name="Price")
+    @Column(name="price")
     private String price;
 
-    @Column(name="Ingredients")
+    @Column(name="ingredients")
     private String ingredients;
 
-    @Column(name="State Speciality")
+    @Column(name="state_speciality")
     private String state;
 
-    @Column(name = "Rating")
+    @Column(name = "rating")
     private double rating;
 }
