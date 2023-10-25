@@ -5,9 +5,7 @@ import com.example.food_service.entity.Food;
 import com.example.food_service.service.FoodService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -24,9 +22,22 @@ public class controller {
     }
 
     @GetMapping("get-menu/{cId}")
-    public ResponseEntity<List<Food>> getMenu(@PathVariable(value = "cId") String cafeId){
+    public ResponseEntity<List<Food>> getMenu(@PathVariable(value = "cId") int cafeId){
         List<Food> menu = foodService.getMenu(cafeId);
         return ResponseEntity.ok(menu);
+    }
+
+    @PostMapping("add-cafe")
+    public ResponseEntity<Cafe> addCafe(@RequestBody Cafe cafe){
+        foodService.addCafe(cafe);
+        return ResponseEntity.ok(cafe);
+    }
+
+    @PostMapping("add-menu/{cId}")
+    public ResponseEntity<List<Food>> addFood(@RequestBody List<Food> foods,@PathVariable int cId){
+        foods.forEach(val -> val.setCId(cId));
+        foodService.addFoods(foods);
+        return ResponseEntity.ok(foods);
     }
 
 

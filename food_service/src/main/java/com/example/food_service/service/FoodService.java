@@ -20,7 +20,15 @@ public class FoodService {
         return cafeRepository.findAll();
     }
 
-    public List<Food> getMenu(String cafeId) {
+    public List<Food> getMenu(int cafeId) {
         return foodRepository.findBycId(cafeId);
+    }
+
+    public void addCafe(Cafe cafe) {
+        cafeRepository.save(cafe);
+    }
+
+    public void addFoods(List<Food> foods) {
+        foodRepository.saveAll(foods);
     }
 }

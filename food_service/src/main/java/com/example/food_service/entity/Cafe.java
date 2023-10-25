@@ -15,8 +15,8 @@ public class Cafe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="id")
-    private String cId;
+    private int cId;
 
-    @Column(name = "name")
+    @Column(name = "name",unique = true)
     private String name;
 }

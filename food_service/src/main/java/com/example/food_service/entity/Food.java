@@ -17,16 +17,18 @@ public class Food {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id")
-    private String fId;
+    private int fId;
+
 
     @Column(name = "Cafe Id")
-    private String cId;
+    private int cId;
 
-    @Column(name="name")
+
+    @Column(name="name",unique = true)
     private String name;
 
     @Column(name="price")
-    private String price;
+    private int price;
 
     @Column(name="ingredients")
     private String ingredients;
