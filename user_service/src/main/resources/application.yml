@@ -7,7 +7,7 @@ spring:
     hibernate:
       ddl-auto: update
   application:
-    name: USER_SERVICE
+    name: USER-SERVICE
 eureka:
   client:
     serviceUrl:

@@ -31,7 +31,7 @@ public class controller {
         //access proceed else no
         ResponseEntity<User> user;
         try {
-            user = restTemplate.getForEntity("http://USER_SERVICE/users/get-user/" + id, User.class);
+            user = restTemplate.getForEntity("http://USER-SERVICE/users/get-user/" + id, User.class);
         }
         catch (HttpClientErrorException exception){
             return ResponseEntity.status(exception.getStatusCode()).body(List.of());
