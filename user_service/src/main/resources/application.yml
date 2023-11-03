@@ -1,4 +1,6 @@
 spring:
+  config:
+    import: optional:configserver://localhost:8087
   datasource:
     url: jdbc:mysql://localhost:3306/microservice
     username: root
